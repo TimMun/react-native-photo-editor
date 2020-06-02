@@ -343,7 +343,7 @@ public class PhotoEditorActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void openAddTextPopupWindow(String text, int colorCode) {
-        colorCodeTextView = colorCode;
+        colorCodeTextView = colorCode == -1 ? getResources().getColor(R.color.white) : colorCode;
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View addTextPopupWindowRootView = inflater.inflate(R.layout.add_text_popup_window, null);
         final EditText addTextEditText = (EditText) addTextPopupWindowRootView.findViewById(R.id.add_text_edit_text);
